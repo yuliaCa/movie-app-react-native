@@ -14,13 +14,10 @@ import {
   Flex,
   Spacer,
 } from "native-base";
-
 const MovieCard = (props) => {
   const { id, image, label, navigation, popularity, release, url } = props;
-
   const [theMovieData, setTheMovieData] = useState();
   const [theImage, setTheImage] = useState();
-
   getTheMovieDetails = (id) => {
     axios
       .get(
@@ -28,11 +25,16 @@ const MovieCard = (props) => {
       )
       .then(({ data }) => {
         setTheMovieData(data);
-
-        return theMovieData;
+        console.log(data);
+        navigation.navigate("MovieDetailScreen", {
+          label: data.title,
+          overview: data.overview,
+          popularity: data.popularity,
+          release: data.release_date,
+          image: `${imgURL}${data.backdrop_path}`,
+        });
       });
   };
-
   return (
     <Flex
       style={{ marginTop: 15, marginBottom: 0 }}
@@ -43,24 +45,14 @@ const MovieCard = (props) => {
       <Box style={{ marginRight: 10 }}>
         <Image alt={label} source={{ uri: image }} size={"xl"} />
       </Box>
-
       <VStack space={1}>
         <Heading size="xs">{label}</Heading>
         <Text>Popularity: {popularity}</Text>
         <Text>Release Date: {release}</Text>
-
         <Box px={1} pb={0}>
           <Button
             onPress={() => {
               getTheMovieDetails(id);
-
-              navigation.navigate("MovieDetailScreen", {
-                label: label,
-                overview: theMovieData.overview,
-                popularity: theMovieData.popularity,
-                release: theMovieData.release_date,
-                image: `${imgURL}${theMovieData.backdrop_path}`,
-              });
             }}
           >
             More Details
@@ -70,5 +62,4 @@ const MovieCard = (props) => {
     </Flex>
   );
 };
-
 export default MovieCard;
