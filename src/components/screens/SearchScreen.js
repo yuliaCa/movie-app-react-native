@@ -48,7 +48,7 @@ const SearchScreen = ({ navigation, route }) => {
           )}
         />
       ) : (
-        ""
+        <Text>No Data</Text>
       )}
     </View>
   );

@@ -53,6 +53,7 @@ const MovieCard = (props) => {
           <Button
             onPress={() => {
               getTheMovieDetails(id);
+
               navigation.navigate("MovieDetailScreen", {
                 label: label,
                 overview: theMovieData.overview,
