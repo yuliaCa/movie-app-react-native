@@ -1,20 +1,7 @@
-import {
-  Center,
-  Container,
-  Select,
-  View,
-  Text,
-  CheckIcon,
-  FlatList,
-} from "native-base";
+import { Center, Container, Select, CheckIcon, FlatList } from "native-base";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Form from "../forms/Form";
-import Loading from "../layout/Loading";
-import MoviesList from "../lists/MoviesList";
-import TabNavigation from "../layout/TabNavigation";
-import { getMovies } from "../services/api";
-import { ScrollView } from "react-native";
+
 import {
   API_KEY,
   imgURL,
@@ -128,20 +115,3 @@ const MoviesContainer = ({ navigation }) => {
 };
 
 export default MoviesContainer;
-
-{
-  /* <FlatList>
-          {moviesData.map((result) => {
-            return (
-              <MovieCard
-                key={result.id}
-                label={result.title}
-                popularity={result.popularity}
-                release={result.release_date}
-                navigation={navigation}
-                image={`${imgURL}${result.poster_path}`}
-              ></MovieCard>
-            );
-          })}
-        </FlatList> */
-}
