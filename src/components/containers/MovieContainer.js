@@ -1,17 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useFocusEffect } from "@react-navigation/native";
-import { withNavigationFocus } from "react-navigation";
-import {
-  API_KEY,
-  imgURL,
-  theMovieData,
-  theImage,
-  movieData,
-} from "../config/api_config";
-import axios from "axios";
 import { Box, Button, Center, Text, Image, HStack, Heading } from "native-base";
 
-const MovieContainer = ({ navigation, route }) => {
+const MovieContainer = ({ route }) => {
   const { label, overview, popularity, release, image } = route.params;
 
   return (
