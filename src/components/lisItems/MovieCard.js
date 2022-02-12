@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import StyleSheet from "react-native";
+
 import axios from "axios";
 import { API_KEY, imgURL, theMovieData } from "../config/api_config";
 import {
   Box,
   Button,
-  Center,
-  Divider,
   Heading,
   Image,
   Text,
