@@ -19,23 +19,6 @@ https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page
 export const searchMulti = `
 https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=en-US&page=1&include_adult=false`;
 
-// export const getPopular = () => {
-//   const [data, setData] = useState({
-//     results: [],
-//     selected: {},
-//   });
-//   axios
-//     .get(
-//       `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
-//     )
-//     .then(({ data }) => {
-//       let results = data.results;
-//       setData(results);
-//       console.log(data);
-//       return data;
-//     });
-// };
-
 export let theMovieData = {};
 export let theImage = "";
 
